@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from './node_modules/basiclightbox/src/scripts/main.js'
+import * as basicLightbox from 'basiclightbox';
 
 
 
