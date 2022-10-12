@@ -1,11 +1,46 @@
-import * as basicLightbox from '/node_modules/basiclightbox/src/scripts/main.js'
+import { galleryItems } from './gallery-items.js';
+//import * as basicLightbox from '/node_modules/basiclightbox/src/scripts/main.js'
 
-const instance = basicLightbox.create(`
-    <div class="modal">
-      <img src="assets/images/image.png" width="800" height="600">
+let galleryEl = document.querySelector(".gallery");
+galleryEl.classList.add("gallery");
 
-    </div>
-`);
 
-instance.show()
-console.log(galleryItems);
+function initGallery() {
+
+    galleryItems.forEach(element => {
+
+
+        let galleryLinkEl = document.createElement("a");
+
+        galleryLinkEl.classList.add("gallery__item");
+        galleryLinkEl.setAttribute("href", element.original);
+        galleryEl.append(galleryLinkEl);
+
+        let imgEl = document.createElement("img");
+        imgEl.classList.add("gallery__image");
+        imgEl.setAttribute("src", element.preview);
+        imgEl.setAttribute("alt", element.description);
+
+        galleryLinkEl.append(imgEl);
+
+
+
+    });
+};
+
+initGallery();
+
+galleryEl.addEventListener("click", (event) => {
+    if (event.target.nodeName === "IMG") {
+
+
+        var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+
+        instance.show()
+
+
+    } else {
+        console.log("border!!!!");
+    }
+
+});

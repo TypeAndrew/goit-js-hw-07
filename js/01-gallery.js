@@ -18,7 +18,7 @@ function initGallery() {
         galleryEl.append(galleryItemEl);
 
         let galleryLinkEl = document.createElement("a");
-       // galleryLinkEl.innerHTML = element.original;
+        galleryLinkEl.setAttribute("href", element.original);
         galleryLinkEl.classList.add("gallery__link");
         galleryItemEl.append(galleryLinkEl);
 
@@ -29,42 +29,44 @@ function initGallery() {
         imgEl.setAttribute("data-source", element.original);
         galleryLinkEl.append(imgEl);
 
-    
+
 
     });
 };
- 
+
 initGallery();
 
 galleryEl.addEventListener("click", (event) => {
     if (event.target.nodeName === "IMG") {
-      
-      
+
+
         let instance = basicLightbox.create(`
             <div class="modal">
             <img src="${event.target.currentSrc}" width="1200" height="800">
             </div>
         `);
-        
+
         galleryEl.style.display = 'none';
-        
+
         instance.show()
-        
+
 
     } else {
         console.log("border!!!!");
     }
 
+
+
 });
 
 document.body.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-       // console.log("ha ha ha");
-        
+        // console.log("ha ha ha");
+
         galleryEl.style.display = 'grid';
         let moduleEl = document.querySelector(".basicLightbox");
         moduleEl.remove();
-        
+
     } else {
         console.log("press escape to exit in gallery!!!!");
     }
