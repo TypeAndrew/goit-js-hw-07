@@ -18,7 +18,7 @@ function initGallery() {
         galleryEl.append(galleryItemEl);
 
         let galleryLinkEl = document.createElement("a");
-        galleryLinkEl.setAttribute("href", element.original);
+        //galleryLinkEl.setAttribute("href", element.original);
         galleryLinkEl.classList.add("gallery__link");
         galleryItemEl.append(galleryLinkEl);
 

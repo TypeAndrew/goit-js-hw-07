@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-//import * as basicLightbox from '/node_modules/basiclightbox/src/scripts/main.js'
+import * as basicLightbox from '/node_modules/basiclightbox/src/scripts/main.js'
 
 let galleryEl = document.querySelector(".gallery");
 galleryEl.classList.add("gallery");
@@ -14,6 +14,7 @@ function initGallery() {
 
         galleryLinkEl.classList.add("gallery__item");
         galleryLinkEl.setAttribute("href", element.original);
+        galleryLinkEl.setAttribute("rel", "shortcut icon");
         galleryEl.append(galleryLinkEl);
 
         let imgEl = document.createElement("img");
