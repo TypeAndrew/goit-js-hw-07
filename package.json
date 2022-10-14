@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "basiclightbox": "^5.0.4",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "simplelightbox": "^2.10.4"
   },
   "scripts": {
     "start": "parcel index.html",

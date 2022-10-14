@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from '/node_modules/basiclightbox/src/scripts/main.js'
+import SimpleLightbox from "simplelightbox";
 
 let galleryEl = document.querySelector(".gallery");
 galleryEl.classList.add("gallery");
@@ -35,9 +35,9 @@ galleryEl.addEventListener("click", (event) => {
     if (event.target.nodeName === "IMG") {
 
 
-        var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+        let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
 
-        instance.show()
+        lightbox.show();
 
 
     } else {
