@@ -1,6 +1,5 @@
 node_modules/*
 !node_modules/simplelightbox/
-node_modules/*
-!node_modules/basiclightbox/
+
 .parcel-cache/
 dist/
