@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from 'basicLightbox';
+import * as basicLightbox from '../basicLightbox';
 
 
 
@@ -39,16 +39,16 @@ initGallery();
 galleryEl.addEventListener("click", (event) => {
     if (event.target.nodeName === "IMG") {
 
-
-        let instance = basicLightbox.create(`
+        galleryEl.style.display = 'none';
+        instance = basicLightbox.create(`
             <div class="modal">
             <img src="${event.target.currentSrc}" width="1200" height="800">
             </div>
-        `);
+        `).show();
 
-        galleryEl.style.display = 'none';
+        
 
-        instance.show()
+        //instance.show()
 
 
     } else {
